@@ -164,7 +164,7 @@ const featuredPaths = [
     title: "Low and Zero Impact",
     category: "low-impact",
     url: "https://fiatfitnessproject.com/zero-impact-rosary-workout-program/",
-    image: "assets/rosary.jpg",
+    image: "assets/rosary.webp",
     description:
       "Gentle rosary workout options for beginners, active rest days, seated movement, stretching, and joint-friendly training.",
   },
@@ -172,7 +172,7 @@ const featuredPaths = [
     title: "Pilates and Mobility",
     category: "pilates",
     url: "https://fiatfitnessproject.com/pilates-rosary-workout-program-2/",
-    image: "assets/mer-w-rosary-edited.jpeg",
+    image: "assets/mer-w-rosary-edited.webp",
     description:
       "Core-centered sessions for posture, flexibility, bands, slides, barre, and controlled strength.",
   },
@@ -180,7 +180,7 @@ const featuredPaths = [
     title: "Strength and Lifting",
     category: "strength",
     url: "https://fiatfitnessproject.com/weightlifting-rosary-workout-program/",
-    image: "assets/fiat-logo.png",
+    image: "assets/fiat-logo.webp",
     description:
       "Progressive lifting, loops, sliders, isolateral work, power training, and confidence-building strength.",
   },
@@ -188,7 +188,7 @@ const featuredPaths = [
     title: "Prenatal and Postpartum",
     category: "motherhood",
     url: "https://fiatfitnessproject.com/home/pre-postnatal-rosary-workouts-package/",
-    image: "assets/mer-w-rosary-edited.jpeg",
+    image: "assets/mer-w-rosary-edited.webp",
     description:
       "Pregnancy, postpartum, core healing, diastasis recti, and recovery-focused workout paths.",
   },
@@ -335,7 +335,7 @@ function createFeaturedPathCard(item) {
   const image = document.createElement("img");
   image.src = item.image;
   image.alt = "";
-  image.loading = "lazy";
+  image.loading = "eager";
 
   const play = document.createElement("span");
   play.className = "mini-play";
@@ -588,6 +588,18 @@ document.querySelector("#clear-library")?.addEventListener("click", () => {
   renderWorkoutStudio();
 });
 
+document.querySelector(".menu-toggle")?.addEventListener("click", (event) => {
+  const isOpen = document.body.classList.toggle("nav-open");
+  event.currentTarget.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll("#primary-nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.body.classList.remove("nav-open");
+    document.querySelector(".menu-toggle")?.setAttribute("aria-expanded", "false");
+  });
+});
+
 document.querySelectorAll(".goal-button").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelector(".goal-button.is-active").classList.remove("is-active");
@@ -602,7 +614,9 @@ document.querySelectorAll(".goal-button").forEach((button) => {
 
 document.querySelector(".contact-form").addEventListener("submit", (event) => {
   event.preventDefault();
-  event.currentTarget.reset();
+  const form = event.currentTarget;
+  form.reset();
+  window.open("https://fiatfitnessproject.com/contact/", "_blank", "noopener,noreferrer");
   document.querySelector(".form-note").textContent =
-    "Thank you. Your message is ready for the next step.";
+    "Thank you. The official Fiat Fitness Project contact form opened in a new tab.";
 });

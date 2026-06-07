@@ -41,7 +41,7 @@ a {
 .site-header {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 48px 20px 18px;
+  padding: 48px 20px 0;
   text-align: center;
 }
 
@@ -71,13 +71,35 @@ a {
   font-size: 1.08rem;
 }
 
+.nav-shell {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  margin-top: 28px;
+  padding: 14px 0 18px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px clamp(20px, 4vw, 38px);
-  margin-top: 30px;
   color: var(--green);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 900;
+}
+
+.menu-toggle {
+  display: none;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--green-dark);
+  background: #ffffff;
+  cursor: pointer;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 900;
 }
@@ -219,16 +241,21 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.media-card img {
-  height: clamp(300px, 48vw, 540px);
-  object-fit: cover;
-  opacity: 0.58;
+.media-card iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
 
 .media-card__copy {
-  position: absolute;
-  inset: auto 8% 10%;
-  max-width: 650px;
+  position: static;
+  max-width: none;
+  padding: 28px;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(21, 21, 21, 0.95), rgba(21, 21, 21, 0.82)),
+    url("assets/rosary.webp") center / cover;
 }
 
 .media-card__copy h2 {
@@ -910,6 +937,79 @@ footer p {
   margin: 0;
 }
 
+.program-page {
+  background: var(--soft);
+}
+
+.program-detail {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 24px 0 80px;
+}
+
+.back-link {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--green);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 900;
+}
+
+.program-hero {
+  display: grid;
+  min-height: 520px;
+  align-items: end;
+  border-radius: 4px;
+  padding: clamp(28px, 6vw, 72px);
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.72)),
+    url("assets/mer-w-rosary-edited.webp") right center / auto 100% no-repeat,
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.program-hero--dark {
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(21, 21, 21, 0.92), rgba(21, 21, 21, 0.72)),
+    url("assets/fiat-logo.webp") right center / min(520px, 70vw) no-repeat,
+    #171615;
+}
+
+.program-hero > div {
+  max-width: 720px;
+}
+
+.program-hero p:not(.eyebrow) {
+  max-width: 640px;
+  font-size: 1.18rem;
+}
+
+.program-content {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: clamp(24px, 5vw, 54px);
+  background: #ffffff;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detail-grid article {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 22px;
+}
+
+.detail-grid p {
+  color: var(--muted);
+}
+
 @media (max-width: 900px) {
   .program-intro,
   .welcome,
@@ -939,7 +1039,8 @@ footer p {
   }
 
   .plan-grid,
-  .testimonial-grid {
+  .testimonial-grid,
+  .detail-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -949,14 +1050,46 @@ footer p {
     padding-top: 30px;
   }
 
+  .nav-shell {
+    margin-top: 18px;
+    padding-bottom: 12px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   nav {
+    display: none;
+    padding-top: 12px;
     gap: 10px 18px;
     font-size: 0.92rem;
+  }
+
+  body.nav-open nav {
+    display: grid;
   }
 
   .hero {
     min-height: 560px;
     padding: 64px 20px;
+  }
+
+  .program-hero {
+    min-height: 460px;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+      url("assets/mer-w-rosary-edited.webp") center / cover no-repeat,
+      #ffffff;
+  }
+
+  .program-hero--dark {
+    background:
+      linear-gradient(rgba(21, 21, 21, 0.88), rgba(21, 21, 21, 0.88)),
+      url("assets/fiat-logo.webp") center / cover no-repeat,
+      #171615;
   }
 
   .hero__actions,

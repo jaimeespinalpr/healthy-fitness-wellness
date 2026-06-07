@@ -7,25 +7,55 @@
       name="description"
       content="Fiat Fitness Project helps you grow stronger physically and spiritually through rosary workouts, coaching, planning, and holistic wellness."
     >
+    <meta name="theme-color" content="#3f7f3f">
+    <meta property="og:title" content="Fiat Fitness Project">
+    <meta
+      property="og:description"
+      content="Rosary workouts, Catholic coaching, planner tools, and holistic wellness programs to help you grow stronger physically and spiritually."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaimeespinalpr.github.io/healthy-fitness-wellness/">
+    <meta property="og:image" content="https://jaimeespinalpr.github.io/healthy-fitness-wellness/assets/fiat-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://jaimeespinalpr.github.io/healthy-fitness-wellness/">
+    <link rel="icon" href="assets/favicon.png">
     <title>Fiat Fitness Project</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fiat Fitness Project",
+        "url": "https://jaimeespinalpr.github.io/healthy-fitness-wellness/",
+        "logo": "https://jaimeespinalpr.github.io/healthy-fitness-wellness/assets/fiat-logo.png",
+        "sameAs": ["https://fiatfitnessproject.com/"]
+      }
+    </script>
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
       <a class="brand-lockup" href="#home" aria-label="Fiat Fitness Project home">
-        <img class="brand-logo" src="assets/fiat-logo.png" alt="Fiat Fitness Project logo">
+        <picture>
+          <source srcset="assets/fiat-logo.webp" type="image/webp">
+          <img class="brand-logo" src="assets/fiat-logo.png" alt="Fiat Fitness Project logo">
+        </picture>
         <span class="brand-title">Fiat Fitness Project</span>
         <span class="brand-subtitle">Grow stronger physically and spiritually</span>
       </a>
 
-      <nav aria-label="Main navigation">
-        <a href="#home">Fiat Fitness Project</a>
-        <a href="#programs">Programs</a>
-        <a href="#library">Workout Library</a>
-        <a href="#planner">Peaceful Planner</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="nav-shell">
+        <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">
+          Menu
+        </button>
+        <nav id="primary-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#programs">Programs</a>
+          <a href="#library">Workout Library</a>
+          <a href="#planner">Planner</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -38,19 +68,22 @@
             fitness journey can support the work you are called to do.
           </p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#programs">Explore Programs</a>
-            <a class="button button--secondary" href="#sample">Try a Free Sample</a>
+            <a class="button button--primary" href="https://youtu.be/UbkpXhw2epc">Start Free Workout</a>
+            <a class="button button--secondary" href="https://fiatfitnessproject.com/checkout/?plan=29">Join Membership</a>
+            <a class="button button--secondary" href="#programs">View Programs</a>
           </div>
         </div>
       </section>
 
       <section id="sample" class="media-feature">
         <div class="media-card" aria-label="Featured workout preview">
-          <img
-            src="assets/rosary.jpg"
-            alt="Rosary beads on an open prayer book"
-          >
-          <div class="play-badge" aria-hidden="true"></div>
+          <iframe
+            src="https://www.youtube.com/embed/UbkpXhw2epc"
+            title="Fiat Fitness Project free workout sample"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
           <div class="media-card__copy">
             <p class="eyebrow">Free sample</p>
             <h2>Combine the prayers of the rosary with a contemplative workout.</h2>
@@ -64,10 +97,14 @@
 
       <section id="programs" class="program-intro">
         <div class="program-intro__image">
-          <img
-            src="assets/mer-w-rosary-edited.jpeg"
-            alt="Fiat Fitness Project coach holding a rosary"
-          >
+          <picture>
+            <source srcset="assets/mer-w-rosary-edited.webp" type="image/webp">
+            <img
+              src="assets/mer-w-rosary-edited.jpeg"
+              alt="Fiat Fitness Project coach holding a rosary"
+              loading="lazy"
+            >
+          </picture>
         </div>
         <div class="program-intro__copy">
           <p class="eyebrow">Fiat Fitness Project membership</p>
@@ -89,49 +126,49 @@
           <span>01</span>
           <h3>Fiat Fitness Workouts</h3>
           <p>Purposeful circuits that pair prayer, movement, breath, and reflection.</p>
-          <a href="https://fiatfitnessproject.com/home-2/lets-get-started-choose-your-option/">View membership</a>
+          <a href="programs/membership.html">View membership</a>
         </article>
         <article>
           <span>02</span>
           <h3>Fiat Focus Coaching</h3>
           <p>One-on-one support for health habits, routines, mindset, and goals.</p>
-          <a href="https://fiatfitnessproject.com/fiat-focus/">View coaching</a>
+          <a href="programs/coaching.html">View coaching</a>
         </article>
         <article>
           <span>03</span>
           <h3>Pilates Rosary Program</h3>
           <p>Core-centered sessions for posture, flexibility, prayer, and control.</p>
-          <a href="https://fiatfitnessproject.com/pilates-rosary-workout-program-2/">View program</a>
+          <a href="programs/pilates.html">View program</a>
         </article>
         <article>
           <span>04</span>
           <h3>Weightlifting Rosary Program</h3>
           <p>Progressive workouts for confidence, muscle, and functional power.</p>
-          <a href="https://fiatfitnessproject.com/weightlifting-rosary-workout-program/">View program</a>
+          <a href="programs/weightlifting.html">View program</a>
         </article>
         <article>
           <span>05</span>
           <h3>Zero-Impact Rosary Program</h3>
           <p>Gentle training for joint-friendly movement and sustainable energy.</p>
-          <a href="https://fiatfitnessproject.com/zero-impact-rosary-workout-program/">View program</a>
+          <a href="programs/zero-impact.html">View program</a>
         </article>
         <article>
           <span>06</span>
           <h3>Pre and Postnatal Workouts</h3>
           <p>Supportive sessions for safe strength, stability, and recovery.</p>
-          <a href="https://fiatfitnessproject.com/home/pre-postnatal-rosary-workouts-package/">View package</a>
+          <a href="programs/pre-postnatal.html">View package</a>
         </article>
         <article>
           <span>07</span>
           <h3>Diastasis Recti Healing</h3>
           <p>Breathing, alignment, and strength foundations for rebuilding well.</p>
-          <a href="https://fiatfitnessproject.com/diastasis-recti-healing-rosary-workout-program/">View program</a>
+          <a href="programs/diastasis-recti.html">View program</a>
         </article>
         <article id="planner">
           <span>08</span>
           <h3>Peaceful and Productive Planner</h3>
           <p>A calm daily framework for workouts, meals, priorities, and rest.</p>
-          <a href="https://fiatfitnessproject.com/the-peaceful-productive-planner/">View planner</a>
+          <a href="programs/planner.html">View planner</a>
         </article>
       </section>
 
@@ -309,8 +346,9 @@
         </div>
         <div class="welcome__image">
           <img
-            src="assets/fiat-logo.png"
+            src="assets/fiat-logo.webp"
             alt="Fiat Fitness Project floral logo"
+            loading="lazy"
           >
         </div>
       </section>
@@ -357,6 +395,7 @@
             <textarea name="message" rows="5" required></textarea>
           </label>
           <button class="button button--primary" type="submit">Send Message</button>
+          <a class="button button--secondary button--light" href="https://fiatfitnessproject.com/contact/">Open Official Contact Form</a>
           <p class="form-note" role="status"></p>
         </form>
       </section>
