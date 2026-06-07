@@ -255,20 +255,44 @@ const workouts = [
   ["Rosary Burst Workouts", "https://fiatfitnessproject.com/2022/11/12/rosary-burst-workouts/", "Member-access rosary burst workouts."],
 ];
 
-const accountLinks = [
-  ["Sign Up", "https://fiatfitnessproject.com/sign-up/"],
-  ["Log In", "https://fiatfitnessproject.com/log-in/"],
-  ["Checkout", "https://fiatfitnessproject.com/checkout/"],
-  ["Checkout Membership Plan", "https://fiatfitnessproject.com/checkout/?plan=29"],
-  ["Order Confirmation", "https://fiatfitnessproject.com/order-confirmation/"],
-  ["Order Failed", "https://fiatfitnessproject.com/order-failed/"],
-  ["Account", "https://fiatfitnessproject.com/account/"],
-  ["My Profile", "https://fiatfitnessproject.com/my-profile/"],
-  ["Member Directory", "https://fiatfitnessproject.com/member-directory/"],
-  ["Reset Password", "https://fiatfitnessproject.com/reset-password/"],
-  ["Affiliate Account", "https://fiatfitnessproject.com/affiliate-account/"],
-  ["Affiliate Registration", "https://fiatfitnessproject.com/affiliate-registration/"],
-  ["Affiliate Reset Password", "https://fiatfitnessproject.com/affiliate-reset-password/"],
+const accountGroups = [
+  {
+    title: "Start here",
+    description: "Create an account or return to your member area.",
+    links: [
+      ["Sign Up", "https://fiatfitnessproject.com/sign-up/"],
+      ["Log In", "https://fiatfitnessproject.com/log-in/"],
+    ],
+  },
+  {
+    title: "Billing",
+    description: "Checkout, membership purchase, and order status pages.",
+    links: [
+      ["Checkout", "https://fiatfitnessproject.com/checkout/"],
+      ["Membership Plan", "https://fiatfitnessproject.com/checkout/?plan=29"],
+      ["Order Confirmation", "https://fiatfitnessproject.com/order-confirmation/"],
+      ["Order Failed", "https://fiatfitnessproject.com/order-failed/"],
+    ],
+  },
+  {
+    title: "Account",
+    description: "Profile, directory, and password management.",
+    links: [
+      ["Account", "https://fiatfitnessproject.com/account/"],
+      ["My Profile", "https://fiatfitnessproject.com/my-profile/"],
+      ["Member Directory", "https://fiatfitnessproject.com/member-directory/"],
+      ["Reset Password", "https://fiatfitnessproject.com/reset-password/"],
+    ],
+  },
+  {
+    title: "Affiliates",
+    description: "Affiliate dashboard, registration, and password reset.",
+    links: [
+      ["Affiliate Account", "https://fiatfitnessproject.com/affiliate-account/"],
+      ["Affiliate Registration", "https://fiatfitnessproject.com/affiliate-registration/"],
+      ["Affiliate Reset Password", "https://fiatfitnessproject.com/affiliate-reset-password/"],
+    ],
+  },
 ];
 
 const fields = {
@@ -514,11 +538,28 @@ function createVideoCard(item) {
 function renderAccountLinks() {
   const container = document.querySelector("#account-list");
   if (!container) return;
-  accountLinks.forEach(([title, url]) => {
-    const link = document.createElement("a");
-    link.href = url;
-    link.textContent = title;
-    container.append(link);
+  accountGroups.forEach((group) => {
+    const card = document.createElement("article");
+    card.className = "account-card";
+
+    const heading = document.createElement("h4");
+    heading.textContent = group.title;
+
+    const description = document.createElement("p");
+    description.textContent = group.description;
+
+    const list = document.createElement("ul");
+    group.links.forEach(([title, url]) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = url;
+      link.textContent = title;
+      item.append(link);
+      list.append(item);
+    });
+
+    card.append(heading, description, list);
+    container.append(card);
   });
 }
 
