@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A practical fitness and holistic wellness guide with workouts, healthy habits, and weekly plans for energy, strength, and balance."
+    >
+    <title>Fitness and Holistic Wellness</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="#home">Healthy</a>
+      <nav>
+        <a href="#plan">Plan</a>
+        <a href="#workouts">Workouts</a>
+        <a href="#wellness">Wellness</a>
+        <a href="#habits">Habits</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero__shade"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Movement, calm, and daily energy</p>
+          <h1>Fitness and holistic wellness</h1>
+          <p>
+            A space to train with intention, care for your body, and build
+            sustainable routines without overcomplicating your life.
+          </p>
+          <a class="hero__button" href="#plan">Create my focus</a>
+        </div>
+      </section>
+
+      <section id="plan" class="section section--warm">
+        <div class="section__inner">
+          <div class="section__intro">
+            <p class="eyebrow">Quick plan</p>
+            <h2>Choose how you want to feel this week</h2>
+            <p>
+              Select a focus and the page adapts a simple guide for training,
+              recovery, and mental well-being.
+            </p>
+          </div>
+
+          <div class="goal-switcher" role="group" aria-label="Weekly goal">
+            <button class="goal-button is-active" type="button" data-goal="energy">Energy</button>
+            <button class="goal-button" type="button" data-goal="strength">Strength</button>
+            <button class="goal-button" type="button" data-goal="balance">Balance</button>
+          </div>
+
+          <div class="plan-grid" aria-live="polite">
+            <article class="plan-card">
+              <span>01</span>
+              <h3 id="movement-title">Active movement</h3>
+              <p id="movement-copy">
+                25 minutes of brisk walking or easy cycling to wake up the body
+                and lift your mood.
+              </p>
+            </article>
+            <article class="plan-card">
+              <span>02</span>
+              <h3 id="strength-title">Functional base</h3>
+              <p id="strength-copy">
+                3 rounds of squats, planks, and incline push-ups with calm rest
+                between sets.
+              </p>
+            </article>
+            <article class="plan-card">
+              <span>03</span>
+              <h3 id="recovery-title">Mindful recovery</h3>
+              <p id="recovery-copy">
+                Gentle hip, back, and neck stretches before bed to help your
+                nervous system slow down.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="workouts" class="section">
+        <div class="split">
+          <div class="image-panel">
+            <img
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1100&q=80"
+              alt="Person strength training with weights in a gym"
+            >
+          </div>
+          <div class="copy-panel">
+            <p class="eyebrow">Smart training</p>
+            <h2>Workouts that fit your life</h2>
+            <p>
+              Consistency grows when training fits your energy, schedule, and
+              current level. Start with short sessions, progress gradually, and
+              listen to your body's signals.
+            </p>
+            <ul class="check-list">
+              <li>Warm up for 5 to 8 minutes before each session.</li>
+              <li>Combine strength, cardio, and mobility every week.</li>
+              <li>Prioritize technique over speed or weight.</li>
+              <li>Reserve at least one day for active recovery.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="wellness" class="section section--deep">
+        <div class="section__inner">
+          <div class="section__intro">
+            <p class="eyebrow">Holistic wellness</p>
+            <h2>Progress needs recovery too</h2>
+            <p>
+              Quality sleep, hydration, and mental pauses support every physical
+              goal. Real wellness is not about demanding more from yourself; it
+              is about caring for your energy better.
+            </p>
+          </div>
+          <div class="wellness-grid">
+            <article>
+              <h3>Rest</h3>
+              <p>Create a steady time to disconnect from screens and prepare for sleep.</p>
+            </article>
+            <article>
+              <h3>Nutrition</h3>
+              <p>Include protein, fiber, and color in most of your meals.</p>
+            </article>
+            <article>
+              <h3>Mind</h3>
+              <p>Breathe slowly for two minutes when you notice tension building up.</p>
+            </article>
+            <article>
+              <h3>Community</h3>
+              <p>Share your goals with someone who helps you stay on track.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="habits" class="section section--warm">
+        <div class="habit-strip">
+          <div>
+            <p class="eyebrow">Sustainable habits</p>
+            <h2>Small actions, lasting change</h2>
+          </div>
+          <div class="habit-list">
+            <p><strong>Morning:</strong> water, natural light, and 10 minutes of mobility.</p>
+            <p><strong>Afternoon:</strong> a complete meal and a short walk.</p>
+            <p><strong>Evening:</strong> gentle stretching and unhurried rest.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Healthy Fitness & Wellness. Educational information, not a substitute for professional medical advice.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
