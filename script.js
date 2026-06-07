@@ -2,35 +2,35 @@ const plans = {
   energy: {
     movementTitle: "Active movement",
     movementCopy:
-      "25 minutes of brisk walking or easy cycling to wake up the body and lift your mood.",
+      "Walk briskly or cycle easily for 25 minutes to wake up your body and lift your mood.",
     strengthTitle: "Functional base",
     strengthCopy:
-      "3 rounds of squats, planks, and incline push-ups with calm rest between sets.",
+      "Complete 3 rounds of squats, planks, and incline push-ups with calm rest between sets.",
     recoveryTitle: "Mindful recovery",
     recoveryCopy:
-      "Gentle hip, back, and neck stretches before bed to help your nervous system slow down.",
+      "Stretch hips, back, and neck before bed to help your nervous system slow down.",
   },
   strength: {
     movementTitle: "Strong activation",
     movementCopy:
-      "8 minutes of dynamic mobility to prepare shoulders, hips, knees, and core.",
+      "Use 8 minutes of dynamic mobility to prepare shoulders, hips, knees, and core.",
     strengthTitle: "Strength progression",
     strengthCopy:
-      "4 controlled sets of hip hinges, pushes, rows, and squats with clean technique.",
+      "Practice 4 controlled sets of hip hinges, presses, rows, and squats with clean technique.",
     recoveryTitle: "Muscle repair",
     recoveryCopy:
-      "Enough protein, water, and 7 to 9 hours of sleep to support progress.",
+      "Prioritize protein, water, and 7 to 9 hours of sleep so your body can adapt.",
   },
   balance: {
     movementTitle: "Gentle movement",
     movementCopy:
-      "20 minutes of relaxed walking or light yoga to release tension without draining energy.",
+      "Choose 20 minutes of relaxed walking or light yoga to release tension without draining energy.",
     strengthTitle: "Stability",
     strengthCopy:
-      "Core work, single-leg balance, and ankle mobility with nasal breathing.",
+      "Pair core work, single-leg balance, and ankle mobility with slow nasal breathing.",
     recoveryTitle: "Mental pause",
     recoveryCopy:
-      "Five minutes of slow breathing and brief journaling to close the day with clarity.",
+      "Take five minutes for slow breathing and brief journaling to close the day with clarity.",
   },
 };
 
@@ -53,4 +53,11 @@ document.querySelectorAll(".goal-button").forEach((button) => {
       element.textContent = selectedPlan[key];
     });
   });
+});
+
+document.querySelector(".contact-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  event.currentTarget.reset();
+  document.querySelector(".form-note").textContent =
+    "Thank you. Your message is ready for the next step.";
 });

@@ -5,153 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="A practical fitness and holistic wellness guide with workouts, healthy habits, and weekly plans for energy, strength, and balance."
+      content="Healthy is a faith-friendly fitness and wellness project with workouts, coaching, habits, recovery, and simple tools for body, mind, and spirit."
     >
-    <title>Fitness and Holistic Wellness</title>
+    <title>Healthy Fitness and Wellness</title>
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header" aria-label="Main navigation">
-      <a class="brand" href="#home">Healthy</a>
-      <nav>
-        <a href="#plan">Plan</a>
-        <a href="#workouts">Workouts</a>
-        <a href="#wellness">Wellness</a>
-        <a href="#habits">Habits</a>
+    <header class="site-header">
+      <a class="brand-lockup" href="#home" aria-label="Healthy home">
+        <span class="brand-mark">H</span>
+        <span class="brand-title">Healthy</span>
+        <span class="brand-subtitle">Grow stronger in body, mind, and spirit</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Healthy</a>
+        <a href="#programs">Programs</a>
+        <a href="#planner">Planner</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
       <section id="home" class="hero">
-        <div class="hero__shade"></div>
         <div class="hero__content">
-          <p class="eyebrow">Movement, calm, and daily energy</p>
-          <h1>Fitness and holistic wellness</h1>
+          <p class="eyebrow">Faith-friendly fitness and whole-person wellness</p>
+          <h1>Move with purpose. Rest with peace. Build a stronger life.</h1>
           <p>
-            A space to train with intention, care for your body, and build
-            sustainable routines without overcomplicating your life.
+            Guided workouts, steady habits, and thoughtful coaching designed to
+            help you care for your health with intention, courage, and calm.
           </p>
-          <a class="hero__button" href="#plan">Create my focus</a>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#programs">Explore Programs</a>
+            <a class="button button--secondary" href="#sample">Try a Weekly Focus</a>
+          </div>
         </div>
       </section>
 
-      <section id="plan" class="section section--warm">
-        <div class="section__inner">
-          <div class="section__intro">
-            <p class="eyebrow">Quick plan</p>
-            <h2>Choose how you want to feel this week</h2>
+      <section id="sample" class="media-feature">
+        <div class="media-card" aria-label="Featured workout preview">
+          <img
+            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1300&q=82"
+            alt="Group fitness class moving together in a bright studio"
+          >
+          <div class="play-badge" aria-hidden="true"></div>
+          <div class="media-card__copy">
+            <p class="eyebrow">Free sample</p>
+            <h2>Try a focused workout for strength, energy, and calm.</h2>
             <p>
-              Select a focus and the page adapts a simple guide for training,
-              recovery, and mental well-being.
+              A simple weekly rhythm: move, breathe, reflect, recover, and
+              repeat with grace.
             </p>
           </div>
-
-          <div class="goal-switcher" role="group" aria-label="Weekly goal">
-            <button class="goal-button is-active" type="button" data-goal="energy">Energy</button>
-            <button class="goal-button" type="button" data-goal="strength">Strength</button>
-            <button class="goal-button" type="button" data-goal="balance">Balance</button>
-          </div>
-
-          <div class="plan-grid" aria-live="polite">
-            <article class="plan-card">
-              <span>01</span>
-              <h3 id="movement-title">Active movement</h3>
-              <p id="movement-copy">
-                25 minutes of brisk walking or easy cycling to wake up the body
-                and lift your mood.
-              </p>
-            </article>
-            <article class="plan-card">
-              <span>02</span>
-              <h3 id="strength-title">Functional base</h3>
-              <p id="strength-copy">
-                3 rounds of squats, planks, and incline push-ups with calm rest
-                between sets.
-              </p>
-            </article>
-            <article class="plan-card">
-              <span>03</span>
-              <h3 id="recovery-title">Mindful recovery</h3>
-              <p id="recovery-copy">
-                Gentle hip, back, and neck stretches before bed to help your
-                nervous system slow down.
-              </p>
-            </article>
-          </div>
         </div>
       </section>
 
-      <section id="workouts" class="section">
-        <div class="split">
-          <div class="image-panel">
-            <img
-              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1100&q=80"
-              alt="Person strength training with weights in a gym"
-            >
-          </div>
-          <div class="copy-panel">
-            <p class="eyebrow">Smart training</p>
-            <h2>Workouts that fit your life</h2>
-            <p>
-              Consistency grows when training fits your energy, schedule, and
-              current level. Start with short sessions, progress gradually, and
-              listen to your body's signals.
+      <section id="programs" class="program-intro">
+        <div class="program-intro__image">
+          <img
+            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=82"
+            alt="Person stretching on a yoga mat in warm light"
+          >
+        </div>
+        <div class="program-intro__copy">
+          <p class="eyebrow">Healthy membership</p>
+          <h2>Program Options</h2>
+          <p>
+            Wherever you are in your wellness journey, there is a next faithful
+            step. Choose from strength training, low-impact movement, mobility,
+            recovery, coaching, and planning tools that help you grow without
+            rushing your life.
+          </p>
+          <p>
+            The goal is simple: strengthen your body, steady your mind, and make
+            space for the work that matters most.
+          </p>
+        </div>
+      </section>
+
+      <section class="program-grid" aria-label="Program options">
+        <article>
+          <span>01</span>
+          <h3>Faith and Fitness Workouts</h3>
+          <p>Purposeful circuits that pair movement, breath, and reflection.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Focus Coaching</h3>
+          <p>One-on-one support for health habits, routines, mindset, and goals.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Pilates and Mobility</h3>
+          <p>Core-centered sessions for posture, flexibility, and body control.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Strength Training</h3>
+          <p>Progressive workouts for confidence, muscle, and functional power.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Zero-Impact Flow</h3>
+          <p>Gentle training for joint-friendly movement and sustainable energy.</p>
+        </article>
+        <article>
+          <span>06</span>
+          <h3>Prenatal and Postnatal Care</h3>
+          <p>Supportive sessions for safe strength, stability, and recovery.</p>
+        </article>
+        <article>
+          <span>07</span>
+          <h3>Core Recovery</h3>
+          <p>Breathing, alignment, and strength foundations for rebuilding well.</p>
+        </article>
+        <article id="planner">
+          <span>08</span>
+          <h3>Peaceful Planner</h3>
+          <p>A calm daily framework for workouts, meals, priorities, and rest.</p>
+        </article>
+      </section>
+
+      <section class="weekly-focus">
+        <div class="weekly-focus__intro">
+          <p class="eyebrow">Choose your focus</p>
+          <h2>What kind of strength do you need this week?</h2>
+          <p>
+            Select a goal and get a simple starting point for movement,
+            strength, and recovery.
+          </p>
+        </div>
+
+        <div class="goal-switcher" role="group" aria-label="Weekly goal">
+          <button class="goal-button is-active" type="button" data-goal="energy">Energy</button>
+          <button class="goal-button" type="button" data-goal="strength">Strength</button>
+          <button class="goal-button" type="button" data-goal="balance">Balance</button>
+        </div>
+
+        <div class="plan-grid" aria-live="polite">
+          <article>
+            <span>Move</span>
+            <h3 id="movement-title">Active movement</h3>
+            <p id="movement-copy">
+              Walk briskly or cycle easily for 25 minutes to wake up your body
+              and lift your mood.
             </p>
-            <ul class="check-list">
-              <li>Warm up for 5 to 8 minutes before each session.</li>
-              <li>Combine strength, cardio, and mobility every week.</li>
-              <li>Prioritize technique over speed or weight.</li>
-              <li>Reserve at least one day for active recovery.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="wellness" class="section section--deep">
-        <div class="section__inner">
-          <div class="section__intro">
-            <p class="eyebrow">Holistic wellness</p>
-            <h2>Progress needs recovery too</h2>
-            <p>
-              Quality sleep, hydration, and mental pauses support every physical
-              goal. Real wellness is not about demanding more from yourself; it
-              is about caring for your energy better.
+          </article>
+          <article>
+            <span>Build</span>
+            <h3 id="strength-title">Functional base</h3>
+            <p id="strength-copy">
+              Complete 3 rounds of squats, planks, and incline push-ups with
+              calm rest between sets.
             </p>
-          </div>
-          <div class="wellness-grid">
-            <article>
-              <h3>Rest</h3>
-              <p>Create a steady time to disconnect from screens and prepare for sleep.</p>
-            </article>
-            <article>
-              <h3>Nutrition</h3>
-              <p>Include protein, fiber, and color in most of your meals.</p>
-            </article>
-            <article>
-              <h3>Mind</h3>
-              <p>Breathe slowly for two minutes when you notice tension building up.</p>
-            </article>
-            <article>
-              <h3>Community</h3>
-              <p>Share your goals with someone who helps you stay on track.</p>
-            </article>
-          </div>
+          </article>
+          <article>
+            <span>Restore</span>
+            <h3 id="recovery-title">Mindful recovery</h3>
+            <p id="recovery-copy">
+              Stretch hips, back, and neck before bed to help your nervous
+              system slow down.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section id="habits" class="section section--warm">
-        <div class="habit-strip">
-          <div>
-            <p class="eyebrow">Sustainable habits</p>
-            <h2>Small actions, lasting change</h2>
-          </div>
-          <div class="habit-list">
-            <p><strong>Morning:</strong> water, natural light, and 10 minutes of mobility.</p>
-            <p><strong>Afternoon:</strong> a complete meal and a short walk.</p>
-            <p><strong>Evening:</strong> gentle stretching and unhurried rest.</p>
-          </div>
+      <section id="about" class="welcome">
+        <div class="welcome__copy">
+          <p class="eyebrow">Welcome</p>
+          <h2>I am glad you are here.</h2>
+          <p>
+            Healthy was created for people who want fitness to feel grounded,
+            meaningful, and sustainable. You do not need a perfect schedule or a
+            perfect body. You need a place to begin, a plan you can return to,
+            and encouragement that keeps you moving.
+          </p>
+          <blockquote>
+            "Let your health become a way to practice stewardship, patience,
+            strength, and joy."
+          </blockquote>
+          <a class="button button--primary" href="#contact">Join the Healthy Family</a>
         </div>
+        <div class="welcome__image">
+          <img
+            src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=82"
+            alt="Smiling fitness coach in a bright studio"
+          >
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <p class="eyebrow">What people are saying</p>
+        <div class="testimonial-grid">
+          <figure>
+            <blockquote>
+              "The workouts feel focused and peaceful. I finish stronger, not
+              scattered."
+            </blockquote>
+            <figcaption>- Community Member</figcaption>
+          </figure>
+          <figure>
+            <blockquote>
+              "The accountability helped me make health part of my real life
+              again."
+            </blockquote>
+            <figcaption>- Coaching Client</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div>
+          <p class="eyebrow">Contact us</p>
+          <h2>Have a question or want help choosing a program?</h2>
+          <p>
+            Send a note and we will point you toward a simple next step.
+          </p>
+        </div>
+        <form class="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="button button--primary" type="submit">Send Message</button>
+          <p class="form-note" role="status"></p>
+        </form>
       </section>
     </main>
 
