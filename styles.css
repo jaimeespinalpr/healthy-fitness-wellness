@@ -51,22 +51,12 @@ a {
   gap: 8px;
 }
 
-.brand-mark {
-  display: grid;
+.brand-logo {
   width: clamp(180px, 30vw, 300px);
   aspect-ratio: 1;
-  place-items: center;
-  border-radius: 50%;
-  color: #ffffff;
-  background:
-    radial-gradient(circle at 48% 48%, rgba(255, 255, 255, 0.72) 0 4%, transparent 5%),
-    radial-gradient(circle at 50% 44%, rgba(216, 167, 165, 0.92) 0 34%, rgba(158, 95, 91, 0.72) 35% 54%, transparent 55%),
-    radial-gradient(circle at 34% 38%, rgba(255, 232, 229, 0.72), transparent 34%),
-    #2f2d2a;
+  border-radius: 2px;
   box-shadow: var(--shadow);
-  font-size: clamp(4rem, 10vw, 7rem);
-  font-style: italic;
-  line-height: 1;
+  object-fit: cover;
 }
 
 .brand-title {
@@ -107,7 +97,8 @@ nav a:focus-visible {
   color: #ffffff;
   background:
     linear-gradient(rgba(17, 17, 17, 0.68), rgba(17, 17, 17, 0.68)),
-    url("https://images.unsplash.com/photo-1518310952931-b1de897abd40?auto=format&fit=crop&w=1800&q=82") center / cover;
+    url("assets/fiat-logo.png") center / min(620px, 86vw) no-repeat,
+    #171615;
   text-align: center;
 }
 
@@ -387,8 +378,9 @@ figcaption {
 }
 
 .welcome__image img {
-  min-height: 520px;
-  object-fit: cover;
+  min-height: auto;
+  object-fit: contain;
+  background: #2f2d2a;
 }
 
 .testimonials {
