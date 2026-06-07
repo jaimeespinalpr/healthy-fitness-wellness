@@ -358,7 +358,25 @@ figcaption {
 }
 
 .library-block {
-  margin-top: 28px;
+  margin-top: 42px;
+}
+
+.block-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.block-heading h3,
+.block-heading p {
+  margin-bottom: 0;
+}
+
+.block-heading > p,
+.library-count {
+  color: var(--muted);
 }
 
 .library-block--feature {
@@ -370,6 +388,33 @@ figcaption {
   border-radius: 4px;
   padding: 28px;
   background: #ffffff;
+}
+
+.library-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0 42px;
+}
+
+.library-stats article {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.library-stats strong {
+  display: block;
+  color: var(--green-dark);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+}
+
+.library-stats span {
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .library-block--feature p,
@@ -389,6 +434,80 @@ figcaption {
   box-shadow: inset 0 0 0 1px rgba(40, 97, 46, 0.24);
 }
 
+.featured-paths {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.featured-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(21, 21, 21, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(21, 21, 21, 0.14);
+}
+
+.featured-card__image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #171615;
+}
+
+.featured-card__image img {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.76;
+}
+
+.featured-card__copy {
+  padding: 20px;
+}
+
+.featured-card h4,
+.video-card h5 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.2;
+}
+
+.featured-card p {
+  color: var(--muted);
+}
+
+.mini-play {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  width: 44px;
+  height: 32px;
+  border-radius: 9px;
+  background: #d92520;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.mini-play::after {
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 13px solid #ffffff;
+  content: "";
+}
+
 .link-card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -406,6 +525,13 @@ figcaption {
   border-radius: 4px;
   padding: 20px;
   background: #ffffff;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.link-card:hover {
+  border-color: rgba(63, 127, 63, 0.42);
+  box-shadow: 0 14px 30px rgba(21, 21, 21, 0.08);
+  transform: translateY(-2px);
 }
 
 .link-card h4 {
@@ -439,6 +565,180 @@ figcaption {
   border-radius: 4px;
   padding: 8px 13px;
   background: #ffffff;
+}
+
+.library-tools {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.search-box {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 900;
+}
+
+.search-box input {
+  min-height: 52px;
+  border-color: rgba(40, 97, 46, 0.28);
+  box-shadow: 0 10px 24px rgba(21, 21, 21, 0.06);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button,
+.clear-button {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 15px;
+  color: var(--green-dark);
+  background: #ffffff;
+  cursor: pointer;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 900;
+}
+
+.filter-button.is-active {
+  color: #ffffff;
+  border-color: var(--green);
+  background: var(--green);
+}
+
+.clear-button {
+  justify-self: start;
+  color: var(--rose-dark);
+  background: transparent;
+}
+
+.empty-state {
+  display: grid;
+  gap: 4px;
+  border: 1px dashed rgba(158, 95, 91, 0.48);
+  border-radius: 4px;
+  padding: 24px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.empty-state strong {
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.workout-sections {
+  display: grid;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.workout-section {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+.workout-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.workout-section__header h4 {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.workout-section__header span {
+  color: var(--rose-dark);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 900;
+}
+
+.video-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.video-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #ffffff;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(21, 21, 21, 0.1);
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  min-height: 126px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(21, 21, 21, 0.1), rgba(21, 21, 21, 0.68)),
+    var(--green);
+}
+
+.video-thumb::before {
+  position: absolute;
+  inset: 0;
+  opacity: 0.78;
+  background: url("assets/rosary.jpg") center / cover;
+  content: "";
+}
+
+.video-thumb--pilates::before,
+.video-thumb--motherhood::before {
+  background-image: url("assets/mer-w-rosary-edited.jpeg");
+}
+
+.video-thumb--strength::before,
+.video-thumb--community::before {
+  background-image: url("assets/fiat-logo.png");
+}
+
+.video-thumb::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(21, 21, 21, 0.16), rgba(21, 21, 21, 0.76));
+  content: "";
+}
+
+.video-thumb > span:not(.mini-play) {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #ffffff;
+  background: rgba(21, 21, 21, 0.72);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.video-card__copy {
+  padding: 18px;
+}
+
+.video-card__copy p {
+  color: var(--muted);
+  font-size: 0.96rem;
 }
 
 .weekly-focus {
@@ -585,12 +885,19 @@ footer p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .link-card-grid,
-  .link-card-grid--compact {
+  .library-stats,
+  .featured-paths {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .library-block--feature {
+  .link-card-grid,
+  .link-card-grid--compact,
+  .video-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .library-block--feature,
+  .block-heading {
     grid-template-columns: 1fr;
   }
 
@@ -624,9 +931,20 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .link-card-grid,
-  .link-card-grid--compact {
+  .library-stats,
+  .featured-paths {
     grid-template-columns: 1fr;
+  }
+
+  .link-card-grid,
+  .link-card-grid--compact,
+  .video-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workout-section__header {
+    display: grid;
+    gap: 4px;
   }
 
   .program-intro__image img,

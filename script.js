@@ -159,6 +159,52 @@ const courses = [
   },
 ];
 
+const featuredPaths = [
+  {
+    title: "Low and Zero Impact",
+    category: "low-impact",
+    url: "https://fiatfitnessproject.com/zero-impact-rosary-workout-program/",
+    image: "assets/rosary.jpg",
+    description:
+      "Gentle rosary workout options for beginners, active rest days, seated movement, stretching, and joint-friendly training.",
+  },
+  {
+    title: "Pilates and Mobility",
+    category: "pilates",
+    url: "https://fiatfitnessproject.com/pilates-rosary-workout-program-2/",
+    image: "assets/mer-w-rosary-edited.jpeg",
+    description:
+      "Core-centered sessions for posture, flexibility, bands, slides, barre, and controlled strength.",
+  },
+  {
+    title: "Strength and Lifting",
+    category: "strength",
+    url: "https://fiatfitnessproject.com/weightlifting-rosary-workout-program/",
+    image: "assets/fiat-logo.png",
+    description:
+      "Progressive lifting, loops, sliders, isolateral work, power training, and confidence-building strength.",
+  },
+  {
+    title: "Prenatal and Postpartum",
+    category: "motherhood",
+    url: "https://fiatfitnessproject.com/home/pre-postnatal-rosary-workouts-package/",
+    image: "assets/mer-w-rosary-edited.jpeg",
+    description:
+      "Pregnancy, postpartum, core healing, diastasis recti, and recovery-focused workout paths.",
+  },
+];
+
+const workoutCategories = [
+  { id: "all", label: "All" },
+  { id: "beginner", label: "Beginner" },
+  { id: "low-impact", label: "Low impact" },
+  { id: "pilates", label: "Pilates + mobility" },
+  { id: "strength", label: "Strength" },
+  { id: "cardio", label: "Cardio + core" },
+  { id: "motherhood", label: "Prenatal + recovery" },
+  { id: "community", label: "Community + prayer" },
+];
+
 const workouts = [
   ["E(H)MO(H)M Rosary Workouts", "https://fiatfitnessproject.com/2026/02/01/ehmohm-rosary-workouts/", "Body weight, cardio, lifting, and mystery-based workout formats."],
   ["Weightlifting Rosary Workout Program", "https://fiatfitnessproject.com/2025/12/01/weightlifting-rosary-workout-program/", "Member-access weightlifting rosary workouts."],
@@ -255,20 +301,214 @@ function createCard(item) {
   return card;
 }
 
+function createFeaturedPathCard(item) {
+  const card = document.createElement("article");
+  card.className = "featured-card";
+
+  const imageWrap = document.createElement("div");
+  imageWrap.className = "featured-card__image";
+
+  const image = document.createElement("img");
+  image.src = item.image;
+  image.alt = "";
+  image.loading = "lazy";
+
+  const play = document.createElement("span");
+  play.className = "mini-play";
+  play.setAttribute("aria-hidden", "true");
+
+  imageWrap.append(image, play);
+
+  const copy = document.createElement("div");
+  copy.className = "featured-card__copy";
+
+  const tag = document.createElement("span");
+  tag.className = "link-tag";
+  tag.textContent = workoutCategories.find((category) => category.id === item.category).label;
+
+  const title = document.createElement("h4");
+  const link = document.createElement("a");
+  link.href = item.url;
+  link.textContent = item.title;
+  title.append(link);
+
+  const description = document.createElement("p");
+  description.textContent = item.description;
+
+  copy.append(tag, title, description);
+  card.append(imageWrap, copy);
+  return card;
+}
+
+function categorizeWorkout(title) {
+  const normalized = title.toLowerCase();
+  if (normalized.includes("beginner")) return "beginner";
+  if (
+    normalized.includes("prenatal") ||
+    normalized.includes("postpartum") ||
+    normalized.includes("diastasis")
+  ) return "motherhood";
+  if (
+    normalized.includes("zero impact") ||
+    normalized.includes("low impact") ||
+    normalized.includes("seated") ||
+    normalized.includes("active rest") ||
+    normalized.includes("stretching")
+  ) return "low-impact";
+  if (
+    normalized.includes("pilates") ||
+    normalized.includes("barre") ||
+    normalized.includes("slider") ||
+    normalized.includes("slides") ||
+    normalized.includes("resistance")
+  ) return "pilates";
+  if (
+    normalized.includes("lifting") ||
+    normalized.includes("weightlifting") ||
+    normalized.includes("power") ||
+    normalized.includes("loop")
+  ) return "strength";
+  if (
+    normalized.includes("cardio") ||
+    normalized.includes("core") ||
+    normalized.includes("jump") ||
+    normalized.includes("run") ||
+    normalized.includes("walk") ||
+    normalized.includes("cycling") ||
+    normalized.includes("step") ||
+    normalized.includes("burst")
+  ) return "cardio";
+  return "community";
+}
+
+function workoutToItem([title, url, description]) {
+  const category = categorizeWorkout(title);
+  return {
+    title,
+    url,
+    description,
+    category,
+    tag: workoutCategories.find((entry) => entry.id === category).label,
+  };
+}
+
 function renderCards(containerId, items) {
   const container = document.querySelector(containerId);
   if (!container) return;
   items.forEach((item) => container.append(createCard(item)));
 }
 
-function renderWorkoutCards() {
-  const items = workouts.map(([title, url, description]) => ({
-    title,
-    url,
-    description,
-    tag: "Workout",
-  }));
-  renderCards("#workout-list", items);
+function renderFeaturedPaths() {
+  const container = document.querySelector("#featured-paths");
+  if (!container) return;
+  featuredPaths.forEach((item) => container.append(createFeaturedPathCard(item)));
+}
+
+function renderFilters() {
+  const container = document.querySelector("#workout-filters");
+  if (!container) return;
+  workoutCategories.forEach((category) => {
+    const button = document.createElement("button");
+    button.className = "filter-button";
+    button.type = "button";
+    button.dataset.category = category.id;
+    button.textContent = category.label;
+    if (category.id === "all") button.classList.add("is-active");
+    container.append(button);
+  });
+}
+
+function renderWorkoutStudio() {
+  const container = document.querySelector("#workout-sections");
+  const counter = document.querySelector("#library-count");
+  if (!container) return;
+
+  const selectedFilter =
+    document.querySelector(".filter-button.is-active")?.dataset.category || "all";
+  const query = document.querySelector("#library-search")?.value.trim().toLowerCase() || "";
+  const allWorkouts = workouts.map(workoutToItem);
+  const visibleItems = allWorkouts.filter((item) => {
+    const matchesCategory = selectedFilter === "all" || item.category === selectedFilter;
+    const searchable = `${item.title} ${item.description} ${item.tag}`.toLowerCase();
+    return matchesCategory && searchable.includes(query);
+  });
+
+  container.replaceChildren();
+
+  workoutCategories
+    .filter((category) => category.id !== "all")
+    .forEach((category) => {
+      const items = visibleItems.filter((item) => item.category === category.id);
+      if (!items.length) return;
+
+      const section = document.createElement("section");
+      section.className = "workout-section";
+
+      const header = document.createElement("div");
+      header.className = "workout-section__header";
+
+      const heading = document.createElement("h4");
+      heading.textContent = category.label;
+
+      const count = document.createElement("span");
+      count.textContent = `${items.length} ${items.length === 1 ? "series" : "series"}`;
+
+      header.append(heading, count);
+
+      const grid = document.createElement("div");
+      grid.className = "video-card-grid";
+      items.forEach((item) => grid.append(createVideoCard(item)));
+
+      section.append(header, grid);
+      container.append(section);
+    });
+
+  if (counter) {
+    counter.textContent = `${visibleItems.length} workout series shown`;
+  }
+
+  if (!visibleItems.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state";
+    empty.innerHTML =
+      "<strong>No workout series found.</strong><span>Try another category or clear the search to browse the full library.</span>";
+    container.append(empty);
+  }
+}
+
+function createVideoCard(item) {
+  const card = document.createElement("article");
+  card.className = "video-card";
+
+  const thumb = document.createElement("a");
+  thumb.className = `video-thumb video-thumb--${item.category}`;
+  thumb.href = item.url;
+  thumb.setAttribute("aria-label", `Open ${item.title}`);
+
+  const play = document.createElement("span");
+  play.className = "mini-play";
+  play.setAttribute("aria-hidden", "true");
+
+  const tag = document.createElement("span");
+  tag.textContent = item.tag;
+
+  thumb.append(play, tag);
+
+  const copy = document.createElement("div");
+  copy.className = "video-card__copy";
+
+  const title = document.createElement("h5");
+  const link = document.createElement("a");
+  link.href = item.url;
+  link.textContent = item.title;
+  title.append(link);
+
+  const description = document.createElement("p");
+  description.textContent = item.description;
+
+  copy.append(title, description);
+  card.append(thumb, copy);
+  return card;
 }
 
 function renderAccountLinks() {
@@ -282,10 +522,30 @@ function renderAccountLinks() {
   });
 }
 
+renderFeaturedPaths();
 renderCards("#offer-list", offers);
 renderCards("#course-list", courses);
-renderWorkoutCards();
+renderFilters();
+renderWorkoutStudio();
 renderAccountLinks();
+
+document.querySelectorAll(".filter-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelector(".filter-button.is-active").classList.remove("is-active");
+    button.classList.add("is-active");
+    renderWorkoutStudio();
+  });
+});
+
+document.querySelector("#library-search")?.addEventListener("input", renderWorkoutStudio);
+
+document.querySelector("#clear-library")?.addEventListener("click", () => {
+  const search = document.querySelector("#library-search");
+  if (search) search.value = "";
+  document.querySelector(".filter-button.is-active")?.classList.remove("is-active");
+  document.querySelector('.filter-button[data-category="all"]')?.classList.add("is-active");
+  renderWorkoutStudio();
+});
 
 document.querySelectorAll(".goal-button").forEach((button) => {
   button.addEventListener("click", () => {

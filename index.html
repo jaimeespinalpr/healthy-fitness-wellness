@@ -164,23 +164,86 @@
           </div>
         </div>
 
+        <div class="library-stats" aria-label="Library summary">
+          <article>
+            <strong>10</strong>
+            <span>Main offers</span>
+          </article>
+          <article>
+            <strong>7</strong>
+            <span>Courses and resources</span>
+          </article>
+          <article>
+            <strong>47</strong>
+            <span>Workout series</span>
+          </article>
+          <article>
+            <strong>13</strong>
+            <span>Member links</span>
+          </article>
+        </div>
+
         <div class="library-block">
-          <h3>Main Pages and Offers</h3>
+          <div class="block-heading">
+            <div>
+              <p class="eyebrow">Start here</p>
+              <h3>Featured paths</h3>
+            </div>
+            <p>Choose the clearest path based on season, impact level, or training goal.</p>
+          </div>
+          <div id="featured-paths" class="featured-paths"></div>
+        </div>
+
+        <div class="library-block">
+          <div class="block-heading">
+            <div>
+              <p class="eyebrow">Programs</p>
+              <h3>Main Pages and Offers</h3>
+            </div>
+            <p>Core program, coaching, planner, membership, about, and contact pages.</p>
+          </div>
           <div id="offer-list" class="link-card-grid"></div>
         </div>
 
         <div class="library-block">
-          <h3>Courses and Resources</h3>
+          <div class="block-heading">
+            <div>
+              <p class="eyebrow">Learn and plan</p>
+              <h3>Courses and Resources</h3>
+            </div>
+            <p>Workshops, planner resources, free workouts, and formation pages.</p>
+          </div>
           <div id="course-list" class="link-card-grid"></div>
         </div>
 
-        <div class="library-block">
-          <h3>Rosary Workout Library</h3>
-          <div id="workout-list" class="link-card-grid link-card-grid--compact"></div>
+        <div class="library-block workout-studio">
+          <div class="block-heading">
+            <div>
+              <p class="eyebrow">Workout studio</p>
+              <h3>Rosary Workout Library</h3>
+            </div>
+            <p>Browse the workout library by style instead of scrolling through one long list.</p>
+          </div>
+          <div class="library-tools">
+            <label class="search-box">
+              <span>Search workouts</span>
+              <input id="library-search" type="search" placeholder="Try pilates, prenatal, lifting, zero impact...">
+            </label>
+            <div id="workout-filters" class="filter-bar" role="group" aria-label="Workout category filters"></div>
+            <button id="clear-library" class="clear-button" type="button">Clear filters</button>
+          </div>
+          <p id="library-count" class="library-count" aria-live="polite"></p>
+          <div id="workout-sections" class="workout-sections"></div>
         </div>
 
         <div class="library-block">
-          <h3>Member, Checkout, and Account Links</h3>
+          <div class="block-heading">
+            <div>
+              <p class="eyebrow">Members</p>
+              <h3>Member, Checkout, and Account Links</h3>
+            </div>
+            <p>Quick access for sign up, login, checkout, profile, account, and affiliate pages.</p>
+          </div>
           <div id="account-list" class="directory-list"></div>
         </div>
       </section>
