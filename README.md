@@ -1,6 +1,6 @@
 # Healthy Fitness and Wellness
 
-Static English website for Fiat Fitness Project. It includes the original site imagery, a centered brand masthead, program options, a weekly focus selector, welcome section, testimonials, and contact form.
+Static English website for Fiat Fitness Project. It includes the original site imagery, a centered brand masthead, program options, a full directory of public program/course/workout/account links, a weekly focus selector, welcome section, testimonials, and contact form.
 
 ## GitHub Pages
 
